@@ -6,8 +6,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "dev-par": "parcel src/parallax.html",
-    "dev-nre": "parcel src/nre.html"
+    "dev": "parcel src/index.html"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
