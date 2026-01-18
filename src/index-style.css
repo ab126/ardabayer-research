@@ -217,6 +217,19 @@ p.lead{
   line-height: 1.6;
 }
 
+.icon-link img {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Iframe styling for project demos */
+.project-iframe {
+  width: 100%;
+  height: 50vh;        /* fills most of the viewport height */
+  border: none;       /* removes default iframe border */
+  display: block;     /* avoids inline spacing issues */
+}
+
 /* Floating parallax layers */
 .parallax-layer{
   position:fixed;
@@ -286,6 +299,39 @@ p.lead{
   width:100%;
   height:0%;
   background:linear-gradient(180deg,#2ee6c8,#4a9cff)
+}
+
+/* Legend styling */
+.legend {
+  margin-top: 2em;
+  padding: 20px;
+  background: rgba(255,255,255,0.01);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.legend strong {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: #e6eef8;
+}
+
+.legend ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 0;
+}
+
+.legend li {
+  margin-bottom: 10px;
+  color: rgba(230,238,248,0.8);
+  line-height: 1.5;
+}
+
+.legend li strong {
+  display: inline;
+  margin-bottom: 0;
 }
 
 /* Footer */

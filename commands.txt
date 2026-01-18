@@ -1,5 +1,0 @@
-
-
-# Build
-- Delete dist and cache for clean build
-npx parcel build src/index.html --public-url ./	

@@ -68,9 +68,31 @@
                 </div>
               </div>
               <div class="more-details">
-                Detailed explanation of the project, methods used, contributions, results, and links.
+                <div>
+                  <strong>Overview</strong>
+                  <p style="margin-bottom: 2em;">Network Risk Estimation (NRE) is a novel framework for estimating the risks of entities in a cyber network in real-time. By leveraging observed communications and third-party risk measurements, NRE provides dynamic risk assessments that adapt to incoming data, enhancing visibility of cybersecurity measures.</p>
+                    <p style="margin-bottom: 2em;">Below is a demonstration of the NRE. The demo simulates a small network, showcasing how NRE dynamically updates risk estimates as new batch of network flow data is processed. <a href="https://ab126.github.io/NRE-web/" target="_blank" class="icon-link" onclick="event.stopPropagation();"><img src="pop-up-icon1.png" alt="Open Demo" style="width: 24px; height: 24px;"></a>
+                  </p>
+                </div>
                 
-              
+                <iframe
+                  src="https://ab126.github.io/NRE-web/"
+                  title="Network Risk Estimation Demo"
+                  class="project-iframe">
+                </iframe>
+                
+                <div style="margin-top:2em;">
+                  <strong>Legend</strong>
+                  <ul>
+                    <li><strong>Nodes:</strong> Network entities (e.g. users, servers, etc.)</li>
+                    <li><strong>Risk Scores:</strong> Color-coded from green (low risk) to red (high risk)</li>
+                    <li><strong>Red Edges:</strong> The inferred connectivity between entities</li>
+                    <li><strong>Yellow Edges:</strong> Flow data, packets were exchanged among entities for the flow batch</li>
+                  </ul>
+                </div>
+
+                <!-- Add bloom scenes: With and Without NRE -->
+
               </div>
             </article>
 

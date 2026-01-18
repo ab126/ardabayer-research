@@ -5,8 +5,9 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "rm-hist": "rd -rf dist .parcel-cache",
+    "build": "parcel build"    
   },
   "devDependencies": {
     "buffer": "^6.0.3",
