@@ -39,9 +39,9 @@
         <aside class="card reveal">
           <strong>Affliation</strong>
           <hr style="margin:8px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
-          <p style="margin-top:8px;color:rgba(230,238,248,0.7)">PhD student at Rice, Aazhang Lab — <a href="https://aaz.rice.edu/" style="color:inherit;opacity:.9">aaz.rice.edu</a></p>
+          <p style="margin-top:8px;color:rgba(230,238,248,0.7)">PhD student at Rice, Aazhang Lab — <a href="https://aaz.rice.edu/" target="_blank" style="color:inherit;opacity:.9">aaz.rice.edu</a></p>
           <hr style="margin:8px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
-          <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Graduate Fellow at Houston Methodist, Khavari Lab — <a href="https://www.khavariresearch.com/" style="color:inherit;opacity:.9">khavariresearch.com</a></p>
+          <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Graduate Fellow at Houston Methodist, Khavari Lab — <a href="https://www.khavariresearch.com/" target="_blank" style="color:inherit;opacity:.9">khavariresearch.com</a></p>
           <hr style="margin:8px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
           <p style="font-size:.9rem;color:rgba(230,238,248,0.6)">Houston · TX </p>
         </aside>
@@ -64,14 +64,16 @@
                   <p>Inferring cyber network risks in real-time</p>
                 </div>
                 <div class="card-icon"> 
-                  <img src="nre-icon.png" alt="NRE">
+                  <img src="media/nre-icon.png" alt="NRE">
                 </div>
               </div>
               <div class="more-details">
                 <div>
                   <strong>Overview</strong>
                   <p style="margin-bottom: 2em;">Network Risk Estimation (NRE) is a novel framework for estimating the risks of entities in a cyber network in real-time. By leveraging observed communications and third-party risk measurements, NRE provides dynamic risk assessments that adapt to incoming data, enhancing visibility of cybersecurity measures.</p>
-                    <p style="margin-bottom: 2em;">Below is a demonstration of the NRE. The demo simulates a small network, showcasing how NRE dynamically updates risk estimates as new batch of network flow data is processed. <a href="https://ab126.github.io/NRE-web/" target="_blank" class="icon-link" onclick="event.stopPropagation();"><img src="pop-up-icon1.png" alt="Open Demo" style="width: 24px; height: 24px;"></a>
+                    <p style="margin-bottom: 2em;">Below is a demonstration of the NRE.
+                       The demo simulates a small network, showcasing how NRE dynamically updates risk estimates as new batch of network flow data is processed.
+                       <a href="https://ab126.github.io/NRE-web/" target="_blank" class="icon-link" onclick="event.stopPropagation();"><img src="media/pop-up-icon1.png" alt="Open Demo" style="width: 24px; height: 24px;"></a>
                   </p>
                 </div>
                 
@@ -96,33 +98,57 @@
               </div>
             </article>
 
-            <article class="card work reveal">
+            <article class="card work reveal expandable">
               <div class="card-header">
                 <div class="card-text">
                   <strong>Urological Brain Computer Interface</strong>
                   <p>Decoding supraspinal control of Lower Urinary Tract</p>
                 </div>
-                <div class="card-icon">- icon -</div>
+                <div class="card-icon"> 
+                  <img src="media/fmri-conn-icon.png" alt="fMRI-Conn">
+                </div>
               </div>
+              <div class="more-details">
+                  <div>
+                    <strong>Overview</strong>
+                    <p style="margin-bottom: 2em;">Understanding the supraspinal control of the Lower Urinary Tract (LUT) is crucial for developing effective treatments for urinary disorders.
+                      This project focuses on decoding brain activity related to LUT function using advanced neuroimaging techniques and machine learning algorithms.</p>
+                    <p style="margin-bottom: 2em;">We employ functional Magnetic Resonance Imaging (fMRI) to capture brain activity during various LUT tasks.
+                      The collected data is then analyzed using manifold embedded functional connectivity methods to identify patterns and networks associated with LUT control.
+                      <a href="https://ab126.github.io/fMRIViz/" target="_blank" class="icon-link" onclick="event.stopPropagation();">
+                        <img src="media/pop-up-icon1.png" alt="Open Demo" style="width: 24px; height: 24px;">
+                      </a>
+                    </p>
+                  </div>
+
+                  <iframe
+                    src="https://ab126.github.io/fMRIViz/"
+                    title="fMRI ROI Vizualization"
+                    class="project-iframe">
+                  </iframe>
+
+
+                </div>
             </article>
           </div>
         </div>  
         
         <div class="right-col">
           <h2 class="reveal">Papers and Repositories</h2> 
-          <p class="lead reveal">Please consider citing if you make use of our work</p>
+          <p class="lead reveal">If you use our work, please cite:</p>
           
-          <aside class="card reveal">
+            <aside class="card reveal">
             <strong>Network Risk Estimation</strong>
-            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Paper: <a href="https://doi.org/10.48550/arXiv.2501.16487" style="color:inherit;opacity:.9">Bayer, A., Maluf, D. and Aazhang, B., 2025. Network Risk Estimation: A Risk Estimation Paradigm for Cyber Networks. arXiv preprint arXiv:2501.16487.</a></p>
-            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Repository: <a href="https://github.com/ab126/NRE" style="color:inherit;opacity:.9">github.com/ab126/NRE</a></p>
-          
-          </aside>
+            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Paper: <a href="https://doi.org/10.48550/arXiv.2501.16487" target="_blank" style="color:inherit;opacity:.9">Bayer, A., Maluf, D. and Aazhang, B., 2025. Network Risk Estimation: A Risk Estimation Paradigm for Cyber Networks. arXiv preprint arXiv:2501.16487.</a></p>
+            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Repository: <a href="https://github.com/ab126/NRE" target="_blank" style="color:inherit;opacity:.9">github.com/ab126/NRE</a></p>
+            
+            </aside>
 
-          <aside class="card reveal">
+            <aside class="card reveal">
             <strong>Manifold Embedded Functional Connectivity</strong>
-            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Paper: <em>TBD</em></p>
-          </aside>
+            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Paper: <em>TBA</em></p>
+            <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Repositories: <a href="https://github.com/ab126/fMRIViz" target="_blank" style="color:inherit;opacity:.9">github.com/ab126/fMRIViz</a></p>
+            </aside>
         </div> 
       </div>
     </section>
