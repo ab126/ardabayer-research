@@ -33,10 +33,35 @@ header{
   backdrop-filter:blur(6px);
   border-bottom:1px solid rgba(255,255,255,0.03);
 }
-.brand{
-  font-weight:600;
-  letter-spacing:0.4px
+
+/* Brand photo in header - small, circular, aligned nicely with text */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;                /* space between photo and name */
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  font-size: 1.1rem;        /* slightly larger if you want emphasis */
 }
+
+.brand-photo {
+  flex-shrink: 0;
+}
+
+.brand-photo img {
+  width: 68px;              /* small but visible — try 36–56px range */
+  height: 68px;
+  border-radius: 50%;       /* perfect circle for professional look */
+  object-fit: cover;        /* crops nicely if not perfectly square */
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.brand:hover .brand-photo img {
+  transform: scale(1.12);   /* subtle zoom on hover — optional but nice */
+}
+
 nav a{
   color:rgba(230,238,248,0.75);
   text-decoration:none;
@@ -334,6 +359,44 @@ p.lead{
   margin-bottom: 0;
 }
 
+/* People layout inside card */
+.person {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.person-photo {
+  flex-shrink: 0;
+}
+
+.person-photo img {
+  width: 96px;               /* or 80px–120px — adjust to taste */
+  height: 96px;
+  border-radius: 50%;        /* circular portraits look professional */
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.person-info p {
+  margin: 0;
+  color: rgba(230,238,248,0.85);
+  line-height: 1.45;
+  font-size: 0.98rem;
+}
+
+.person-info strong {
+  color: #e6eef8;
+}
+
+.person-info a {
+  opacity: 0.9;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Footer */
 footer{
   padding:56px 8vw;
@@ -342,8 +405,13 @@ footer{
   color:rgba(230,238,248,0.6)
 }
 
+.person:hover .person-photo img {
+  transform: scale(1.06);
+  transition: transform 0.25s ease;
+}
+
 /* Responsive */
-@media (max-width:900px){
+@media (max-width:600px){
   .work-wrap{
     grid-template-columns:1fr;
     gap:22px
@@ -357,5 +425,26 @@ footer{
 
   .parallax-item{display:none}
   .card{order:3}
+
+  .brand {
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .brand-photo img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .person {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+  
+  .person-photo img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 12px;
+  }
 }
 
