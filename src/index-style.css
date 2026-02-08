@@ -68,6 +68,7 @@ nav a{
   margin-left:18px;
   font-size:0.95rem
 }
+
 hr {
   margin:16px 0;
   border:none;
@@ -397,6 +398,106 @@ p.lead{
   text-underline-offset: 2px;
 }
 
+.person:hover .person-photo img {
+  transform: scale(1.06);
+  transition: transform 0.25s ease;
+}
+
+/* Useful Links card styling */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                    /* consistent vertical spacing between items */
+  margin-top: 12px;
+}
+
+.link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.link-label {
+  font-weight: 500;
+  color: rgba(230,238,248,0.85);
+  min-width: 80px;              /* keeps labels aligned — adjust if needed */
+  flex-shrink: 0;
+}
+
+.link-value {
+  color: rgba(230,238,248,0.9);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link-value:hover {
+  opacity: 1;
+  color: #4a9cff;               /* or #2ee6c8 to match your gradient buttons */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Optional: subtle separator line between items instead of <hr> */
+.link-item:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,0.03);
+  margin-top: 16px;
+}
+
+/* Contact form styling */
+.contact-form {
+  max-width: 500px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.form-fields input,
+.form-fields textarea {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.8rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-fields input:focus,
+.form-fields textarea:focus {
+  outline: none;
+  border-color: #4a9cff;
+  box-shadow: 0 0 0 3px rgba(74,156,255,0.15);
+}
+
+.form-fields textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-status {
+  transition: all 0.3s ease;
+}
+
+.form-status[style*="display: block"] {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Footer */
 footer{
   padding:56px 8vw;
@@ -405,10 +506,7 @@ footer{
   color:rgba(230,238,248,0.6)
 }
 
-.person:hover .person-photo img {
-  transform: scale(1.06);
-  transition: transform 0.25s ease;
-}
+
 
 /* Responsive */
 @media (max-width:600px){
@@ -445,6 +543,15 @@ footer{
     width: 110px;
     height: 110px;
     margin: 0 auto 12px;
+  }
+
+  .link-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .link-label {
+    min-width: auto;
   }
 }
 

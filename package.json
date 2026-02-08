@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --no-cache --open",
     "rm-hist": "rd -rf dist .parcel-cache",
     "build": "parcel build"    
   },

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arda Bayer - Research</title>
   <link rel="stylesheet" href="index-style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 <body>
   <header>
@@ -43,22 +44,22 @@
 
         <aside class="card reveal">
           <strong>Affiliation</strong>
-          <hr style="margin:8px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
+          <hr>
           
-          <p style="margin-top:12px;color:rgba(230,238,248,0.9);font-weight:500;">
+          <p style="margin-top:12px;color:rgba(230,238,248,0.8);font-weight:500;">
             PhD Student, Electrical & Computer Engineering<br>
             Aazhang Lab, Rice University
-            <br><a href="https://aaz.rice.edu/" target="_blank" style="color:inherit;opacity:.9">aaz.rice.edu</a>
+            <br><a href="https://aaz.rice.edu/" target="_blank" style="color:inherit;opacity:.7">aaz.rice.edu</a>
           </p>
 
-          <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
-          <p style="margin-top:8px;color:rgba(230,238,248,0.9);font-weight:500;">
+          <hr>
+          <p style="margin-top:8px;color:rgba(230,238,248,0.8);font-weight:500;">
             Graduate Research Fellow<br>
             Khavari Lab, Houston Methodist Hospital
-            <br><a href="https://www.khavariresearch.com/" target="_blank" style="color:inherit;opacity:.9">khavariresearch.com</a>
+            <br><a href="https://www.khavariresearch.com/" target="_blank" style="color:inherit;opacity:.7">khavariresearch.com</a>
           </p>
           
-          <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
+          <hr>
           
           <p style="font-size:0.9rem;color:rgba(230,238,248,0.6);text-align:center;">
             Houston, TX
@@ -133,7 +134,7 @@
                     <p style="margin-bottom: 2em;">Understanding the supraspinal control of the Lower Urinary Tract (LUT) is crucial for developing effective treatments for urinary disorders.
                       This project focuses on decoding brain activity related to LUT function using advanced neuroimaging techniques and machine learning algorithms.</p>
                     <p style="margin-bottom: 2em;">We employ functional Magnetic Resonance Imaging (fMRI) to capture brain activity during various LUT tasks.
-                      The collected data is then analyzed using manifold embedded functional connectivity methods to identify patterns and networks associated with LUT control.
+                      The collected data is then analyzed using manifold embedded functional connectivity methods to identify patterns and networks associated with LUT control. Below is a public viewer for the regions of interests (ROI) used within this work.
                       <a href="https://ab126.github.io/fMRIViz/" target="_blank" class="icon-link" onclick="event.stopPropagation();">
                         <img src="media/pop-up-icon1.png" alt="Open Demo" style="width: 24px; height: 24px;">
                       </a>
@@ -174,9 +175,26 @@
 
     <section id="about">
       <div class="wrap">
+         
         <div>
-          <h2 class="reveal">About the lab</h2>
-          <p class="lead reveal">Concise mission statement, one or two sentences. Use this area to outline research interests and methods.</p>
+          <h2 class="reveal" style="margin-bottom: 1.6rem;">About</h2>
+          <p class="lead reveal">
+            Developing principled computational methods to understand and control complex systems — from cyber networks to the human brain.
+          </p>
+
+          <p class="reveal" style="margin-top:1.8rem; max-width:68ch; line-height:1.65; color:rgba(230,238,248,0.82);">
+            My research applies <strong>graph models</strong>, <strong>systems theory</strong>, and <strong>information theory</strong> to problems at the intersection of engineering and science. Previous work and current directions include:
+          </p>
+
+          <ul class="reveal" style="margin:1.6rem 0 2rem 1.8rem; line-height:1.7; color:rgba(230,238,248,0.82);">
+            <li>Real-time risk estimation and inference in cyber-physical networks</li>
+            <li>Decoding supraspinal control of the lower urinary tract using fMRI, manifold learning and functional connectivity</li>
+            <li>Information-theoretic and graphical approaches to complex networked systems</li>
+          </ul>
+
+          <p class="reveal" style="max-width:64ch; line-height:1.65; color:rgba(230,238,248,0.82);">
+            I am currently a PhD student in the Aazhang Lab (Rice University) and a graduate fellow in the Khavari Lab (Houston Methodist), working at the interface of computational neuroscience, neuro-urology, and data science as of 2026.
+          </p>  
         </div>
 
         <aside class="card reveal">
@@ -218,19 +236,90 @@
         <div>
           <h2 class="reveal">Get in touch</h2>
           <p class="lead reveal">Interested in a collaboration? Drop a short note.</p>
-          <form class="reveal" onsubmit="event.preventDefault();alert('Thanks — replace this with real form handling')">
-            <div style="display:flex;gap:12px;margin-top:12px;flex-direction:column">
-              <input placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-              <input placeholder="Email" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-              <textarea placeholder="Message" rows="4" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+
+          <form 
+            class="reveal contact-form"
+            action="https://formspree.io/f/mgolvvok" 
+            method="POST"
+          > <!-- mgolvvok -->
+            <div class="form-fields">
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Your name" 
+                required
+              >
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Email" 
+                required
+              >
+              <textarea 
+                name="message" 
+                placeholder="Message" 
+                rows="4" 
+                required
+              ></textarea>
+              
+              <!-- Very helpful honeypot field to reduce spam -->
+              <input 
+                type="text" 
+                name="_notcha" 
+                style="display:none"
+              >
+
               <button class="btn" type="submit">Send</button>
             </div>
+
           </form>
         </div>
 
         <aside class="card reveal">
-          <strong>Useful Links</strong>
-          <p style="margin-top:8px;color:rgba(230,238,248,0.7)">Links to ORCID, GitHub, Twitter</p>
+          <strong>More Links</strong>
+          <hr style="margin:12px 0 20px;border:none;border-top:1px solid rgba(255,255,255,0.02)">
+
+          <div class="links-list">
+            <div class="link-item">
+              <span class="link-label">ORCID</span>
+              <a href="https://orcid.org/0009-0004-4772-5188" target="_blank" class="link-value">
+                0009-0004-4772-5188
+              </a>
+            </div>
+
+            <div class="link-item">
+              <span class="link-label">GitHub</span>
+              <a href="https://github.com/ab126" target="_blank" class="link-value">
+                github.com/ab126
+              </a>
+            </div>
+
+            <div class="link-item">
+              <span class="link-label">Google Scholar</span>
+              <a href="https://scholar.google.com/citations?user=x4VoqdUAAAAJ&hl=en&oi=sra" target="_blank" class="link-value">
+                Arda Bayer
+              </a>
+            </div>
+            
+            <div class="link-item">
+              <span class="link-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/arda-bayer-413495181/" target="_blank" class="link-value">
+                linkedin.com/in/arda-bayer-413495181
+              </a>
+            </div>
+
+            <!-- Add more as needed, examples: -->
+            <!--          
+
+            <div class="link-item">
+              <span class="link-label">Email</span>
+              <a href="mailto:arda.bayer@rice.edu" class="link-value">
+                arda.bayer@rice.edu
+              </a>
+            </div>
+            -->
+          </div>
+          
         </aside>
       </div>
     </section>

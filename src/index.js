@@ -82,4 +82,78 @@ document.querySelectorAll('.card.expandable').forEach(card => {
     });
 });
 
+// Contact form feedback
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('#contact form');
+  if (!form) return;
 
+  const statusContainer = document.createElement('div');
+  statusContainer.className = 'form-status';
+  statusContainer.style.display = 'none';
+  statusContainer.style.marginTop = '16px';
+  statusContainer.style.padding = '12px 16px';
+  statusContainer.style.borderRadius = '10px';
+  statusContainer.style.fontSize = '0.95rem';
+  statusContainer.style.lineHeight = '1.4';
+
+  form.appendChild(statusContainer);
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const action = form.getAttribute('action');
+
+    try {
+
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Inside the success block, add:
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sent ✓";
+        submitBtn.style.background = 'linear-gradient(90deg, #2ee6c8, #4a9cff)';
+        submitBtn.style.opacity = '0.9';
+        
+        confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#2ee6c8', '#4a9cff', '#ff98d1']
+        });
+
+        // Reset after a few seconds
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.style.opacity = '1';
+            form.reset(); // clear the form
+        }, 5000);
+      } else {
+        throw new Error('Server responded with error');
+      }
+    } catch (error) {
+      // Error
+      statusContainer.textContent = "Sorry, there was a problem sending your message. Please try again or email me directly.";
+      statusContainer.style.background = 'rgba(255, 80, 80, 0.12)';
+      statusContainer.style.border = '1px solid rgba(255, 80, 80, 0.4)';
+      statusContainer.style.color = '#ff5050';
+      statusContainer.style.display = 'block';
+
+    }
+
+    // Auto-hide after 8 seconds
+    setTimeout(() => {
+      statusContainer.style.display = 'none';
+    }, 8000);
+  });
+});
